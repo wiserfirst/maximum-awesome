@@ -52,6 +52,14 @@ if exists('$TMUX')  " Support resizing in tmux
   set ttymouse=xterm2
 endif
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep --smart-case'
+endif
+cnoreabbrev ag Ack!
+cnoreabbrev aG Ack!
+cnoreabbrev Ag Ack!
+cnoreabbrev AG Ack!
+
 " keyboard shortcuts
 let mapleader = ','
 noremap <C-h> <C-w>h
@@ -59,7 +67,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
-nnoremap <leader>a :Ag<space>
+nnoremap <leader>s :Ack!<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
