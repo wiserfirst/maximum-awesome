@@ -67,7 +67,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
-nnoremap <leader>e :Ack!<space>
+nnoremap <leader>e :Ack! '\b<c-r>=expand("<cword>")<cr>\b'
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
