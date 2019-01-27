@@ -53,12 +53,13 @@ if exists('$TMUX')  " Support resizing in tmux
 endif
 
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
+  let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
 endif
-cnoreabbrev ag Ack!
-cnoreabbrev aG Ack!
-cnoreabbrev Ag Ack!
-cnoreabbrev AG Ack!
+cnoreabbrev ack Ack!
+cnoreabbrev ag Ag
+cnoreabbrev rg Rg
 
 " keyboard shortcuts
 let mapleader = ','
@@ -68,11 +69,13 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
 nnoremap <leader>e :Ack! '\b<c-r>=expand("<cword>")<cr>\b'
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>h :History<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nnoremap <leader>t :GFiles?<CR>
+nnoremap <leader>p ::FZFMru<CR>
+nnoremap <c-p> :Files<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
@@ -82,18 +85,8 @@ noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '
 cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
-let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 0
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
 
 " fdoc is yaml
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
