@@ -52,10 +52,10 @@ if exists('$TMUX')  " Support resizing in tmux
   set ttymouse=xterm2
 endif
 
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --nocolor --column --smart-case'
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
+if executable('rg')
+  let g:ackprg = 'rg --no-heading --column --smart-case'
+  " Use Rg over Grep
+  set grepprg=rg\ --no-heading\ --column\ --smart-case
 endif
 cnoreabbrev ack Ack!
 cnoreabbrev ag Ag
