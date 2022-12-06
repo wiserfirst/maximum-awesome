@@ -1,5 +1,6 @@
 {
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
+  "eslint.format.enable": true,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
@@ -13,7 +14,7 @@
     "typescriptreact"
   ],
   "tsserver.formatOnType": true,
-  "prettier.semi": true,
+  "prettier.semi": false,
   "prettier.tabWidth": 2,
   "typescript.suggest.autoImports": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
