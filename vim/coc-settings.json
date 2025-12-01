@@ -1,12 +1,4 @@
 {
-  "eslint.autoFixOnSave": false,
-  "eslint.format.enable": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "javascriptreact",
@@ -14,10 +6,9 @@
     "typescriptreact"
   ],
   "tsserver.formatOnType": true,
-  "prettier.semi": false,
-  "prettier.tabWidth": 2,
   "typescript.suggest.autoImports": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "javascript.suggest.autoImports": true,
-  "coc.preferences.formatOnType": true
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "coc.preferences.formatOnType": false
 }

@@ -71,7 +71,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
-nnoremap <leader>e :Ack! '\b<c-r>=expand("<cword>")<cr>\b'
+nnoremap <leader>e :Ack! '\b<c-r>=expand("<cword>")<cr>\b' -t elixir
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
